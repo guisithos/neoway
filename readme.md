@@ -1,4 +1,4 @@
-# Teste técnico Neoway
+# Neoway
 
 ## Descrição
 Aplicação REST para cadastrar e listar clientes de uma empresa fictícia. Essa empresa em questão fornece serviços B2C e B2B, ou seja, teremos cadastrosde clientes como pessoas físicas e como pessoas jurídicas
