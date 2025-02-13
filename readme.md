@@ -35,7 +35,7 @@ A validação é realiza utilizando o package util
 curl -X POST http://localhost:8080/clients \
 -H "Content-Type: application/json" \
 -d '{
-    "name": "Gionon Wright",
+    "name": "Guilherme",
     "document": "018.729.949-89",
     "type": "PERSON"
 }'
@@ -45,8 +45,8 @@ Resposta (201 Created)
 ```json
 {
 "id": 1,
-"name": "Nome do Cliente",
-"document": "12345678901",
+"name": "Guilherme",
+"document": "018.729.949-89",
 "type": "PERSON",
 "blocked": false,
 "created_at": "2024-03-20T10:00:00Z",
@@ -69,8 +69,8 @@ Resposta (200 OK)
 [
 {
 "id": 1,
-"name": "Nome do Cliente",
-"document": "12345678901",
+"name": "Guilherme",
+"document": "018.729.949-89",
 "type": "PERSON",
 "blocked": false,
 "created_at": "2024-03-20T10:00:00Z",
@@ -98,8 +98,8 @@ Resposta (200 OK)
 ```json
 {
 "id": 1,
-"name": "Nome do Cliente",
-"document": "12345678901",
+"name": "Guilherme",
+"document": "018.729.949-89",
 "type": "PERSON",
 "blocked": false,
 "created_at": "2024-03-20T10:00:00Z",
