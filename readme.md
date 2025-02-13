@@ -215,6 +215,7 @@ internal/
 Utilização de repository pattern para acesso ao db, dependency injection para lidar com as dependencias de cada camada, separação da interface e service layer para facilitar a testabilidade e manutenção do código.
 
 **Database**
+
 Utilizado um banco postgres tanto para o desenvolimento da aplicação principal quanto para os testes,
 para facilitar execuções e complexidade, utilizei GORM como ORM.
 
