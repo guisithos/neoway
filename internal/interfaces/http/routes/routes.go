@@ -16,7 +16,8 @@ func SetupRoutes(r *chi.Mux, clientHandler *handlers.ClientHandler, metricsHandl
 
 	r.Post("/clients", clientHandler.CreateClient)
 	r.Get("/clients", clientHandler.ListClients)
-	r.Get("/clients/{document}", clientHandler.GetClientByDocument)
+	r.Get("/clients/document/{document}", clientHandler.GetClientByDocument)
+	r.Get("/clients/name/{name}", clientHandler.GetClientsByName)
 
 	// add o middleware de debug para as rotas de block/unblock
 	r.Put("/clients/{document}/block", func(w http.ResponseWriter, r *http.Request) {

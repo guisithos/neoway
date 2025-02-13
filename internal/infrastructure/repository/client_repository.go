@@ -11,6 +11,7 @@ import (
 type ClientRepository interface {
 	Create(client *models.Client) error
 	FindByDocument(document string) (*models.Client, error)
+	FindByName(name string) ([]models.Client, error)
 	ListClients() ([]models.Client, error)
 	BlockClient(document string) error
 	UnblockClient(document string) error
@@ -35,6 +36,15 @@ func (r *clientRepository) FindByDocument(document string) (*models.Client, erro
 		return nil, err
 	}
 	return &client, nil
+}
+
+func (r *clientRepository) FindByName(name string) ([]models.Client, error) {
+	var clients []models.Client
+	err := r.db.Where("name ILIKE ?", "%"+name+"%").Find(&clients).Error
+	if err != nil {
+		return nil, err
+	}
+	return clients, nil
 }
 
 func (r *clientRepository) ListClients() ([]models.Client, error) {

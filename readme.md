@@ -78,7 +78,7 @@ Resposta (200 OK)
 }
 ```
 ]
-### Consulta por Documento
+### Consulta por Documento ou Nome
 
 Consulta por documento irá funcionar utilizando tanto o documento com pontos, vírgula e barra, quanto
 o número sem caracteres. 
@@ -106,6 +106,18 @@ Resposta (200 OK)
 "updated_at": "2024-03-20T10:00:00Z"
 }
 ```
+Ou então realizar a pesquisa pelo nome do cliente:
+
+**GET /clients/{name}**
+
+```sh
+curl http://localhost:8080/clients/name
+```
+ou 
+```sh
+curl http://localhost:8080/clients/name
+```
+
 
 ### Bloqueio de Cliente
 

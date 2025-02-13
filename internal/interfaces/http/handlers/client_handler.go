@@ -155,3 +155,16 @@ func (h *ClientHandler) GetClientByDocument(w http.ResponseWriter, r *http.Reque
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(client)
 }
+
+func (h *ClientHandler) GetClientsByName(w http.ResponseWriter, r *http.Request) {
+	name := chi.URLParam(r, "name")
+	
+	clients, err := h.clientService.GetClientsByName(name)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusNotFound)
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(clients)
+}

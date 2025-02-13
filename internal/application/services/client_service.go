@@ -14,6 +14,7 @@ type ClientService interface {
 	BlockClient(document string) error
 	UnblockClient(document string) error
 	GetClientByDocument(document string) (*models.Client, error)
+	GetClientsByName(name string) ([]models.Client, error)
 }
 
 type clientService struct {
@@ -92,4 +93,21 @@ func (s *clientService) GetClientByDocument(document string) (*models.Client, er
 		return nil, errors.New("cliente não encontrado")
 	}
 	return client, nil
+}
+
+func (s *clientService) GetClientsByName(name string) ([]models.Client, error) {
+	if name == "" {
+		return nil, errors.New("nome não pode estar vazio")
+	}
+	
+	clients, err := s.repo.FindByName(name)
+	if err != nil {
+		return nil, err
+	}
+	
+	if len(clients) == 0 {
+		return nil, errors.New("nenhum cliente encontrado com esse nome")
+	}
+	
+	return clients, nil
 }
