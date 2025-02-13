@@ -108,14 +108,14 @@ Resposta (200 OK)
 ```
 Ou então realizar a pesquisa pelo nome do cliente:
 
-**GET /clients/{name}**
+**GET /clients/name/{name}**
 
 ```sh
-curl http://localhost:8080/clients/name
+curl http://localhost:8080/clients/name/Guilherme
 ```
 ou 
 ```sh
-curl http://localhost:8080/clients/name
+curl http://localhost:8080/clients/name/Guilherme
 ```
 
 
